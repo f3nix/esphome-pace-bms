@@ -113,7 +113,7 @@ bool PaceBmsProtocolV25::ProcessReadAnalogInformationResponse(const uint8_t busI
 	if (byteOffset != payloadLen + 13)
 	{
 		LogError("Length mismatch reading analog information response: " + std::to_string(payloadLen + 13 - byteOffset) + " bytes off");
-		return false;
+		// return false;
 	}
 
 	// calculate some "extras"
