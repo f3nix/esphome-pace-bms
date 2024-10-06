@@ -637,7 +637,7 @@ bool PaceBmsProtocolV25::ProcessReadStatusInformationResponse(const uint8_t busI
 	if (byteOffset != payloadLen + 13)
 	{
 		LogError("Length mismatch reading status information response: " + std::to_string(payloadLen + 13 - byteOffset) + " bytes off");
-		return false;
+		// return false;
 	}
 
 	// pop off any trailing "; " separator
