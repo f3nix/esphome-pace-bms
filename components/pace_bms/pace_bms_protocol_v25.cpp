@@ -60,7 +60,7 @@ bool PaceBmsProtocolV25::ProcessReadAnalogInformationResponse(const uint8_t busI
 	uint8_t busIdResponding = ReadHexEncodedByte(response, byteOffset);
 	if (busIdResponding != busId)
 	{
-		LogError("Response from wrong bus Id in payload");
+		LogError("Response from wrong bus Id in payload - IGNORED");
 		// return false;
 	}
 
@@ -115,7 +115,7 @@ bool PaceBmsProtocolV25::ProcessReadAnalogInformationResponse(const uint8_t busI
 
 	if (byteOffset != payloadLen + 13)
 	{
-		LogError("Length mismatch reading analog information response: " + std::to_string(payloadLen + 13 - byteOffset) + " bytes off");
+		LogError("Length mismatch reading analog information response: " + std::to_string(payloadLen + 13 - byteOffset) + " bytes off - IGNORED");
 		// return false;
 	}
 
@@ -503,7 +503,7 @@ bool PaceBmsProtocolV25::ProcessReadStatusInformationResponse(const uint8_t busI
 	uint8_t busIdResponding = ReadHexEncodedByte(response, byteOffset);
 	if (busIdResponding != busId)
 	{
-		LogError("Response from wrong bus Id in payload");
+		LogError("Response from wrong bus Id in payload - IGNORED");
 		// return false;
 	}
 
@@ -641,7 +641,7 @@ bool PaceBmsProtocolV25::ProcessReadStatusInformationResponse(const uint8_t busI
 
 	if (byteOffset != payloadLen + 13)
 	{
-		LogError("Length mismatch reading status information response: " + std::to_string(payloadLen + 13 - byteOffset) + " bytes off");
+		LogError("Length mismatch reading status information response: " + std::to_string(payloadLen + 13 - byteOffset) + " bytes off - IGNORED");
 		// return false;
 	}
 
