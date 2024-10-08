@@ -504,7 +504,7 @@ bool PaceBmsProtocolV25::ProcessReadStatusInformationResponse(const uint8_t busI
 	if (busIdResponding != busId)
 	{
 		LogError("Response from wrong bus Id in payload");
-		return false;
+		// return false;
 	}
 
 	// ========================== Warning / Alarm Status ==========================
