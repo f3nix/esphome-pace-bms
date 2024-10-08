@@ -27,10 +27,10 @@ bool PaceBmsProtocolV25::CreateReadAnalogInformationRequest(const uint8_t busId,
 	const uint16_t payloadLen = 2;
 	std::vector<uint8_t> payload(payloadLen);
 	uint16_t payloadOffset = 0;
-		    uint8_t busId2 = 1;
-    WriteHexEncodedByte(payload, payloadOffset, busId2);
+	uint8_t busId2 = 1;
+        WriteHexEncodedByte(payload, payloadOffset, busId2);
 	
-	WriteHexEncodedByte(payload, payloadOffset, busId);
+	// WriteHexEncodedByte(payload, payloadOffset, busId);
 
 	CreateRequest(busId, CID2_ReadAnalogInformation, payload, request);
 
@@ -154,7 +154,9 @@ bool PaceBmsProtocolV25::CreateReadStatusInformationRequest(const uint8_t busId,
 	const uint16_t payloadLen = 2;
 	std::vector<uint8_t> payload(payloadLen);
 	uint16_t payloadOffset = 0;
-	WriteHexEncodedByte(payload, payloadOffset, busId);
+	uint8_t busId2 = 1;
+        WriteHexEncodedByte(payload, payloadOffset, busId2);
+	// WriteHexEncodedByte(payload, payloadOffset, busId);
 
 	CreateRequest(busId, CID2_ReadStatusInformation, payload, request);
 
